@@ -1,20 +1,13 @@
 import React from 'react';
-import './Home.css'
-import {useNavigate} from 'react-router-dom'
-import Footer from './Footer';
+import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-const Home=()=>
+import './Navbar/Navbar.css';
+const Background=()=>
 {
-    const navigate = useNavigate();
-    const bookAppointment=()=>
-    {
-        navigate.push("localhost:3000/login/patient")
-    }
     return(
-        <div>
-            <div className='body'>
-                
-                <div class="row featurette container-fluid pt-3 pb-4">
+        <div class="d-flex flex-column justify-content-center w-100 h-100">
+            <div class="d-flex flex-column justify-content-center align-items-center">
+            <div class="row featurette container-fluid pt-3 pb-4">
                     
                     <div class="col-md-7 d-flex justify-content-center align-items-center">
                    
@@ -32,6 +25,28 @@ const Home=()=>
                 <hr/>
                 </div>
                 
+                <div class="row">
+                    <div class="col-md-3">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                    <div class="col-md-3"> 
+                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
+                    <div class="col-md-3"> 
+                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                    </div>
+                    <div class="col-md-3">
+                    <ul class="nav nav-pills nav-stacked">
+                        <li class="active"><a href="#">Home</a></li>
+                        <li><a href="#">Menu 1</a></li>
+                        <li><a href="#">Menu 2</a></li>
+                        <li><a href="#">Menu 3</a></li>
+                    </ul>
+                    </div>
+                    <div class="clearfix visible-lg"></div>
+                </div>
+    
+
                 {/* Middle Content Card code */}
                 <div class="extra-margin-5">
                     <div class="Container-fluid">
@@ -104,19 +119,9 @@ const Home=()=>
                         </div>
                     </div>
                 </div>
-               
             </div>
-            
-  
-  
-
-        <div class="custom-footer">
-            <Footer/>
         </div>
-    </div>
-        
-        
-        
-   )
+    
+    )
 }
-export default Home;
+export default Background

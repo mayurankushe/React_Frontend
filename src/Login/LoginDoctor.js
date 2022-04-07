@@ -5,16 +5,16 @@ import axios from 'axios';
 import Footer from '../Homepage/Footer';
 const Login =( )=>{
 
-  const [patientLogin,setPatientLogin] = useState({username: "", password :""});
+  const [doctorLogin,setPatientLogin] = useState({username: "", password :""});
   
   const navigate = useNavigate();
 
 const handleSubmit=(e)=>{
   e.preventDefault();
   console.log("login fired");
-  if(patientLogin.username && patientLogin.password)
+  if(doctorLogin.username && doctorLogin.password)
   {
-    axios.post("http://localhost:8080/patient/login",{username : patientLogin.username ,password : patientLogin.password});
+    axios.post("http://localhost:8080/patient/login",{username : doctorLogin.username ,password : doctorLogin.password});
     navigate("/dashboard")
   }
 
@@ -35,14 +35,10 @@ const handleInput=(e)=>{
               </div>
               <button type="submit" class="btn btn-primary rounded-pill mb-3  w-75" >Login</button>
               <div className='form-group '>
-              New To Hospify, <a href="/register/patient">Create New Account</a>
+              New To Hospify, <Link to="/register/RegisterDoctor">Create New Account</Link>
               </div>
           </form>
-          <div>
-            <Footer/>
-          </div>
-          
       </div>
     )
 }
-export default Login;
+export default Login
