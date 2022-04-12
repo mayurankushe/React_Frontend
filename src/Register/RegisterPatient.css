@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: 'Roboto', sans-serif;
+}
+body{
+	background-color: aliceblue;
+}
+.form-style{
+	background-color : rgba(151, 196, 199, 0.4);
+	backdrop-filter: blur(4px);
+	border-radius: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 37rem;
+	width: 35rem;
+}
+small{
+	color: red;
+}
+.brand-name{
+	color: rgb(27, 30, 32);
+}
+.bag-img{
+	background-image: url(E://React_Frontend/public/register_patient.jpg);
+}
+.brand-name{
+	color: rgb(27, 30, 32);
+}

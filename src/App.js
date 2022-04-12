@@ -1,18 +1,36 @@
-
 import Home from './Homepage/Home';
-import Login from './Login/LoginPatient';
-import Register from './Register/Register';
+import Register from './Register/RegisterPatient';
 import {BrowserRouter as Router } from 'react-router-dom'
 import {Route} from 'react-router-dom'
 import {Routes} from 'react-router-dom'
 import About from './Pages/About';
 import Contact from './Pages/Contact';
 import Help from './Pages/Help';
-import Navbar from './Homepage/Navbar';
+import Navbar from './Homepage/Navbar/Navbar';
 import NotFound from './Pages/NotFound';
-import Dashboard from './Dashboard/Dashboard';
+import LoginPatient from './Login/LoginPatient';
+import LoginDoctor from './Login/LoginDoctor';
+import PatientDashboard from './Dashboard/PatientDashboard/PatientDashboard';
+import DoctorDashboard from './Dashboard/DoctorDashboard/DoctorDashboard';
+import RegisterDoctor from './Register/RegisterDoctor';
+import RegisterPatient from './Register/RegisterPatient';
+import ProfilePatient from './Dashboard/Profile/ProfilePatient';
+import Prescription from './Dashboard/PatientDashboard/Prescription'
+import Treatment from './Dashboard/PatientDashboard/Treatment'
+import BookAppointment from './BookAppointment/BookAppointment'
+import Authenticate from './Login/Authenticate';
+import ShowDoctor from "./BookAppointment/ShowDoctor"
+import ShowHospital from "./BookAppointment/ShowHospital"
+import ForgotPassword from './Login/ForgotPassword';
+import SendPrescription from './Dashboard/DoctorDashboard/SendPrescription';
+import UpdatePatient from './Dashboard/Profile/UpdatePatient'
+import ConfirmAppointment from './BookAppointment/ConfirmAppointment';
+import Feedback from './Dashboard/PatientDashboard/Feedback';
+
+import Testomonials from './Homepage/Testomonials';
 function App() 
 {
+  // const navigate = useNavigate();
   return (
     <div>
       <Router>
@@ -21,18 +39,53 @@ function App()
         <Routes>
           <Route  path='/' element={<Home/>}></Route>
           
-           <Route exact path='/login/admin' element={<Login/>}></Route>
-           <Route exact path='/login/doctor' element={<Login/>}></Route>
-           <Route exact path='/login/patient' element={<Login/>}></Route>
+           {/* <Route exact path='/login/admin' element={}></Route> */}
+           <Route exact path='/login/doctor' element={<LoginDoctor/>}></Route>
+           <Route exact path='/login/patient' element={<LoginPatient/>}></Route>
+           <Route exact path='/login/patient/forgotpassword' element={<ForgotPassword/>}></Route>
+          
+            <Route exact path="/dashboard/patient/:username" element={<PatientDashboard />}></Route> 
            
-            <Route exact path='/dashboard' element={<Dashboard/>}></Route>
+            <Route exact path="/dashboard/doctor/:username" element={<DoctorDashboard/>}></Route>
+            <Route exact path="/dashboard/patient/profile/:username" element={<ProfilePatient/>}></Route>
+            <Route exact path="/dashboard/update-patient/:username" element={<UpdatePatient/>}></Route>
 
-           <Route exact path='/register/patient' element={<Register/>}></Route>
-           <Route exact path='/register/doctor' element={<Register/>}></Route>
+            <Route exact path="/dashboard/doctor/sendprescription/:username" element={<SendPrescription/>}></Route>
+
+            <Route exact path='/dashboard/prescription' element={<Prescription/>}></Route>
+            <Route exact path='/dashboard/treatment' element={<Treatment/>}></Route>
+
+            <Route exact path='/bookappointment' element={<BookAppointment/>}></Route>
+            <Route exact path='/bookappointment/showdoctor/:speciality' element={<ShowDoctor/>}></Route>
+            <Route exact path='/bookappointment/showhospital/:cityName' element={<ShowHospital/>}></Route>
+            
+           
+           <Route exact path='/register/patient' element={<RegisterPatient/>}></Route>
+           <Route exact path='/register/doctor' element={<RegisterDoctor/>}></Route>
            
            <Route exact path='/about' element={<About/>}></Route>
            <Route exact path='/contact' element={<Contact/>}></Route>
            <Route exact path='/help' element={<Help/>}></Route>
+
+           <Route exact path='/dashboard/prescription/:username' element={<Prescription/>}></Route>
+            <Route exact path='/dashboard/treatment' element={<Treatment/>}></Route>
+            <Route exact path='/dashboard/bookappointment/confirm/:username' element={<ConfirmAppointment/>}></Route>
+
+            <Route exact path='/bookappointment' element={<BookAppointment/>}></Route>
+            <Route exact path='/dashboard/feedback' element={<Feedback/>}></Route>
+            <Route exact path="/bookappointment/showdoctor/:speciality" element={<ShowDoctor/>}></Route>
+            <Route exact path="/bookappointment/showhospital/:cityName" element={<ShowHospital/>}></Route>
+            
+           
+           <Route exact path='/register/patient' element={<RegisterPatient/>}></Route>
+           <Route exact path='/register/doctor' element={<RegisterDoctor/>}></Route>
+           
+           <Route exact path='/about' element={<About/>}></Route>
+           <Route exact path='/contact' element={<Contact/>}></Route>
+           <Route exact path='/help' element={<Help/>}></Route>
+
+
+           <Route exact path='/homepage/testomonials' element={<Testomonials/>}></Route>
 
            <Route path='*' element={<NotFound/>}></Route>
         </Routes>

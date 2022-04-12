@@ -1,58 +1,12 @@
-.home-bg {
-	background: linear-gradient(-45deg, #bf72f3, #f375a5ef, #23a6d5, #23d5ab);
-	background-size: 400% 400%;
-	animation: gradient 15s ease infinite;
-	height: 100vh;
+.body{
+    background-color: #ffffff;
 }
-body{
-  background-color: #c5deff;
-}
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+.slider-color
+{
+  background-color: #13838d;
 }
 
-.glass{
-	
-	position: relative;
-	display: inline-block;
-	padding: 15px 30px;
-	text-decoration: none;
-	color: #fff;
-	font-size: 20px;
-	font-family: sans-serif;
-	font-weight: 100;
-}
-.glass1{
-	
-	position: relative;
-	display: inline-block;
-	padding: 15px 30px;
-	
-	text-decoration: none;
-	color: #fff;
-	font-size: 20px;
-	font-family: sans-serif;
-	font-weight: 100;
-}
-.glass2{
-	
-	position: relative;
-	display: inline-block;
-	padding: 15px 30px;
-	text-decoration: none;
-	color: #fff;
-	font-size: 20px;
-	font-family: sans-serif;
-	font-weight: 100;
-}
+
 .card-style
 {
     width: 20rem;
@@ -95,84 +49,6 @@ p {
   font-weight: 300;
 }
 
-.container {
-  display: flex;
-}
-
-/* PRODUCT CARD */
-
-.doctor-card {
-  background-color: #f5f6fa;
-  border-radius: 10px;
-  color: #2f3640;
-  margin: 0 2em;
-  transition: all linear .2s;
-  width: 250px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.doctor-card:hover,
-.doctor-card:active {
-  box-shadow: .2em .5em .5em rgba(0, 0, 0, 0.4);
-  transform: scale(1.1);
-}
-
-.doctor-img {
-  border-radius: 10px 10px 0 0;
-  height: 150px;
-  max-width: 100%;
-  background-size: cover;
-  background-position: center;
-}
-
-.doctor-text {
-  padding: 1em;
-  text-align: center;
-}
-
-.doctor-cart button{
-  border: 0;
-  border-radius: 0 0 10px 10px;
-  color: #f5f6fa;
-  cursor: pointer;
-  font-family: inherit;
-  padding: 1em;
-  text-transform: uppercase;
-  transition: all linear .3s;
-  width: 100%;
-}
-
-.doctor-cart button:hover {
-  font-weight: 500;
-  letter-spacing: .1em;
-}
-
-/* color */
-.doctor-card:first-child h3 {
-  color: #e84118;
-}
-
-.doctor-card:first-child button {
-  background-color: #e84118;
-}
-
-.doctor-card:nth-child(2) h3 {
-  color: #fbc531;
-}
-
-.doctor-card:nth-child(2) button {
-  background-color: #fbc531;
-}
-
-.doctor-card:last-child h3 {
-  color: #0097e6;
-}
-
-.doctor-card:last-child button {
-  background-color: #0097e6;
-}
 
 .custom-footer
 {
@@ -180,13 +56,5 @@ p {
 }
 .extra-margin-5
 {
-margin-top: 5rem;
-}
-
-
-/* Cards */
-.card img
-{
-  width: auto;
-  height: 10rem;
+margin-top: 1rem;
 }

@@ -1,21 +1,46 @@
 import React, { useState,useEffect } from 'react';
-import './register.css'
-
-const RegisterDoctor=()=>{
-    const initialValues = {name:"", username: "", email: "", password: "",mobno:"",address:"",city:"",pincode:"" ,bloodgroup:"",age:"",gender:""};
+import './RegisterDoctor.css'
+import axios from 'axios'
+import {useNavigate} from 'react-router-dom'
+const RegisterPatient=()=>{
+    const initialValues = {name:"", username: "", email: "", password: "",mobno:"",gender:"",hospadd: "",fees: "" ,availableTime : "",speciality :"",experience : "",city : "",clinicVisit :"",degree : ""};
     const [formValues, setFormValues] = useState(initialValues);
     const [formErrors, setFormErrors] = useState({});
     const [isSubmit, setIsSubmit] = useState(false);
-  
+
+    const navigate = useNavigate();
+
+    // var Message ="";
+
     const handleInput = (e) => {
       const { name, value } = e.target;
       setFormValues({ ...formValues, [name]: value });
     };
   
-    const handleSubmit = (e) => {
+    const handleSubmit = async  (e) => {
       e.preventDefault();
       setFormErrors(validate(formValues));
       setIsSubmit(true);
+      console.log(formValues);
+
+        const registerDoctor = {
+            name : formValues.name, username: formValues.username, email: formValues.email, password: formValues.password,mobno: formValues.mobno, hospadd:formValues.hospadd,gender:formValues.gender
+            ,speciality : formValues.speciality ,experience : formValues.experience,availableTime :formValues.availableTime, fees : formValues.fees ,city : formValues.city  ,clinicVisit  :formValues.clinicVisit ,degree : formValues.degree      };
+      await axios.post("http://localhost:8080/register/doctor",registerDoctor).then((response)=>{
+          console.log(response.data);
+          if(response.data === "success")
+          {
+              // console.log("regiseration successfull please login")
+             navigate("/login/doctor")
+            //  Message ="Registeration Successfull Please Login to Acess";
+
+          }
+         
+      }).catch((err)=>{
+            console.log(err.response);
+      })
+    
+
     };
   
     useEffect(() => {
@@ -24,6 +49,7 @@ const RegisterDoctor=()=>{
         console.log(formValues);
       }
     }, [formErrors]);
+
     const validate = (values) => {
       const errors = {};
       const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
@@ -53,21 +79,11 @@ const RegisterDoctor=()=>{
       {
           errors.mobno="mobile no. must be 10 digit "
       }
-      if(!values.city)
-      {
-          errors.city="city is required"
-      }
-      if(!values.age)
-      {
-          errors.age="age is required"
-      }else if(values.age > 100)
-      {
-          errors.age="Enter Valid Age"
-      }
       return errors;
     };
     return(
         <div className='container-fluid d-flex justify-content-center mt-5 ' >
+            {/* <span>`${Message}`</span> */}
            <form className=" d-flex flex-column justify-content-center align-items-center border-primary shadow p-4 mb-5 form" onSubmit={handleSubmit} >
                <div className='d-flex mb-4'>
                 <div className='me-3'>
@@ -93,37 +109,49 @@ const RegisterDoctor=()=>{
                     <small>{formErrors.email}</small>
                     <div className="mb-1">
                         <label htmlFor="mobno" className="form-label">Mobile No*</label>
-                        <input type="tel" className="form-control"  name='mobno' placeholder='Enter the MobileNo'  onChange={handleInput}/>
+                        <input type="number" className="form-control"  name='mobno' placeholder='Enter the MobileNo'  onChange={handleInput}/>
                     </div>
                     <small>{formErrors.mobno}</small>
                     <div className="mb-1">
-                        <label htmlFor="address" className="form-label">Address</label>
-                        <input type="text" className="form-control"  name='address' placeholder='Enter the address' onChange={handleInput}/>
+                        <label htmlFor="address" className="form-label">Hospital Address</label>
+                        <input type="text" className="form-control"  name='hospadd' placeholder='Enter the address' onChange={handleInput}/>
                     </div>
                 </div>
                 <div className='w-50 '>
+
                     <div className="mb-1">
-                        <label htmlFor="city" className="form-label">City*</label>
-                        <input type="text" className="form-control"  name='city' placeholder='Enter the City' onChange={handleInput}/>
-                    </div>
-                    <small>{formErrors.city}</small>
-                    <div className="mb-1">
-                        <label htmlFor="pincode" className="form-label">Pincode</label>
-                        <input type="tel" className="form-control"  name='pincode'  placeholder='Enter the Pincode' onChange={handleInput}/>
+                        <label htmlFor="bloodgrp" className="form-label">speciality</label>
+                        <input type="text" className="form-control"  name='speciality' placeholder='Enter the speciality' onChange={handleInput}/>
                     </div>
                     <div className="mb-1">
-                        <label htmlFor="bloodgrp" className="form-label">Blood Group</label>
-                        <input type="text" className="form-control"  name='bloodgroup' placeholder='Enter the Blood-Group' onChange={handleInput}/>
-                    </div>
-                    <div className="mb-1">
-                        <label htmlFor="age" className="form-label">Age*</label>
-                        <input type="tel" className="form-control"  name='age' placeholder='Enter the Age' onChange={handleInput}/>
+                        <label htmlFor="age" className="form-label">AvailableTime*</label>
+                        <input type="text" className="form-control"  name='availableTime' placeholder='Enter the AvailableTime' onChange={handleInput}/>
                     </div>
                     <small>{formErrors.age}</small>
                     <div className="mb-1">
+                        <label htmlFor="age" className="form-label">Fees*</label>
+                        <input type="number" className="form-control"  name='fees' placeholder='Enter the fees' onChange={handleInput}/>
+                    </div>
+                    <div className="mb-1">
+                        <label htmlFor="age" className="form-label">Experience*</label>
+                        <input type="text" className="form-control"  name='experience' placeholder='Enter the experience' onChange={handleInput}/>
+                    </div>
+                    <div className="mb-1">
+                        <label htmlFor="age" className="form-label">City*</label>
+                        <input type="text" className="form-control"  name='city' placeholder='Enter the city' onChange={handleInput}/>
+                    </div>
+                    <div className="mb-1">
+                        <label htmlFor="age" className="form-label">Degree*</label>
+                        <input type="text" className="form-control"  name='degree' placeholder='Enter the city' onChange={handleInput}/>
+                    </div>
+                    <div className="mb-1 float-right">
+                        <label htmlFor="username" className="form-label">ClinicVisit Available*</label>
+                        <input type="text" className="form-control" name='clinicVisit' placeholder='Enter the Username' onChange={handleInput}/>
+                    </div>
+                    <div className="mb-1">
                         <label htmlFor="gender" className="form-label" >gender*</label><br />
-                        <input type="radio"   name='gender' value="male"/>Male <br />
-                        <input type="radio"   name='gender' value="female"/>Female
+                        <input type="radio"   name='gender' value="male" onChange={handleInput} />Male <br />
+                        <input type="radio"   name='gender' value="female" onChange={handleInput} />Female
                     </div>
                     <small>{formErrors.gender}</small>
                 </div> 
@@ -136,4 +164,4 @@ const RegisterDoctor=()=>{
         </div>
     )
 }
-export default RegisterDoctor;
+export default RegisterPatient;
