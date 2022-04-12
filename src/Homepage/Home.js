@@ -4,6 +4,8 @@ import {useNavigate} from 'react-router-dom'
 import Footer from './Footer/Footer';
 import { Link } from 'react-router-dom';
 import Features from './Features/Features';
+import PatientDashboard from '../Dashboard/PatientDashboard/PatientDashboard';
+
 const Home=()=>
 {
     const navigate = useNavigate();
@@ -33,82 +35,16 @@ const Home=()=>
                         </div>
                     </div>
                 </div>
-                {/* Middle Content Card code */}
                 
-                {/* <div class="extra-margin-5">
-                    <div class="Container-fluid mt-5">
-                        <div class="mt-1 text-center">
-                            <div class="text-info">
-                                <h2>Our Doctors</h2>
-                            </div>
-                            <div class="text-secondary">
-                                <p>lorem</p>
-                            </div>
-                            
-                        </div>
-                        <div class="row justify-content-md-center mt-4">
-                            <div class="row">
-                                <div class="col">
-                                <div class="product-card">
-                                    <div class="product-img img-one"></div>
-                                        <div class="product-text">
-                                            <h3>Dr. Sharma</h3>
-                                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt excepturi totam ducimus, nemo tenetur, quibusdam accusamus neque deserunt aliquid perferendis.</p>
-                                        </div>
-                                        <div class="product-cart">
-                                            <button type="submit">Connect With Doctor</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                <div class="product-card">
-                                    <div class="product-img img-two"></div>
-                                        <div class="product-text">
-                                            <h3>Dr. Chourasia</h3>
-                                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt excepturi totam ducimus, nemo tenetur, quibusdam accusamus neque deserunt aliquid perferendis.</p>
-                                        </div>
-                                        <div class="product-cart">
-                                            <button type="submit">Connect With Doctor</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                <div class="product-card">
-                                    <div class="product-img img-three"></div>
-                                        <div class="product-text">
-                                            <h3>Dr. Anamika</h3>
-                                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt excepturi totam ducimus, nemo tenetur, quibusdam accusamus neque deserunt aliquid perferendis.</p>
-                                        </div>
-                                        <div class="product-cart">
-                                            <button type="submit">Connect With Doctor</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                <div class="product-card">
-                                    <div class="product-img img-four"></div>
-                                        <div class="product-text">
-                                            <h3>Dr. Naveen</h3>
-                                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt excepturi totam ducimus, nemo tenetur, quibusdam accusamus neque deserunt aliquid perferendis.</p>
-                                        </div>
-                                        <div class="product-cart">
-                                            <button type="submit">Connect With Doctor</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-               
-            </div> */}
             
             </div>
   
             <div>
                 <Features/>
             </div>
+           {/* <div>
+               <PatientDashboard/>
+           </div> */}
             <div class="mt-5">
                 <Footer/>
             </div>

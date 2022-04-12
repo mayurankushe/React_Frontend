@@ -26,31 +26,31 @@ function PatientDashboard()
     return(
         
         <div>
-            { !sessionStorage.getItem("token") ? <Navigate to="/login/patient/" /> :
+            {/* { !sessionStorage.getItem("token") ? <Navigate to="/login/patient/" /> : */}
             <div class="d-flex" id="wrapper">
-        <div class="bg-white" id="sidebar-wrapper">
+        <div class="side" id="sidebar-wrapper">
             <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom"><i
-                    lass="fas fa-user-secret me-2"></i>Hospify</div>
+                    lass="fa fa-user-secret me-2"></i>Hospify</div>
             <div class="list-group list-group-flush my-3">
                 <Link to="/dashboard/patient" class="list-group-item list-group-item-action bg-transparent active"><i
-                        class="fas fa-tachometer-alt me-2"></i>Dashboard</Link>
-                 <button class="list-group-item list-group-item-action bg-transparent fw-bold" onClick={idParamProfile}><i
-                        class="fas fa-map-marker-alt me-2"></i>Profile</button>
+                        class="fa fa-tachometer-alt me-2"></i>Dashboard</Link>
+                 <button class="list-group-item list-group-item-action bg-transparent fw-bold text-light" onClick={idParamProfile}><i
+                        class="fa fa-user me-2"></i>Profile</button>
                 {/* <Link to="/dashboard/treatment" class="list-group-item list-group-item-action bg-transparent fw-bold"><i
                         class="fas fa-chart-line me-2"></i>Treatment</Link> */}
-                <button  onClick={toPrescription} class="list-group-item list-group-item-action bg-transparent  fw-bold"><i
-                        class="fas fa-paperclip me-2"></i>Prescription</button>
-                 <Link to="/dashboard/feedback" class="list-group-item list-group-item-action bg-transparent fw-bold"><i
-                        class="fas fa-map-marker-alt me-2"></i>FeedBack</Link>
-                <Link to="/login/patient" class="list-group-item list-group-item-action bg-transparent fw-bold" onClick={logout} ><i
-                        class="fas fa-power-off me-2"></i>Logout</Link>
+                <button  onClick={toPrescription} class="list-group-item list-group-item-action bg-transparent  fw-bold text-light"><i
+                        class="fa fa-paperclip me-2"></i>Prescription</button>
+                 <Link to="/dashboard/feedback" class="list-group-item list-group-item-action bg-transparent fw-bold text-light"><i
+                        class="fa fa fa-comments-o me-2"></i>FeedBack</Link>
+                <Link to="/login/patient" class="list-group-item list-group-item-action bg-transparent fw-bold text-light" onClick={logout} ><i
+                        class="fa fa-power-off me-2"></i>Logout</Link>
             </div>
         </div>
 
         <div id="page-content-wrapper">
             <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
                 <div class="d-flex align-items-center">
-                    <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
+                    <i class="fa fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
                     <h2 class="fs-2 m-0">Patient Dashboard</h2>
                 </div>
 
@@ -65,7 +65,7 @@ function PatientDashboard()
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle second-text fw-bold" href="#" id="navbarDropdown"
                                 role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="fas fa-user me-2"></i>{username}
+                                <i class="fa fa-user me-2"></i>{username}
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><button class="dropdown-item" onClick={idParamProfile} >Profile</button></li>
@@ -80,26 +80,26 @@ function PatientDashboard()
                 <div class="row g-3 my-2">
 
                     <div class="col-md-4">
-                        <div class="p-3 bg-white d-flex justify-content-around align-items-center rounded">
+                        <div class="p-3 bg-info shadow d-flex justify-content-around align-items-center rounded">
                             <div>
-                              <Link className="btn btn-primary btn-lg " to="/bookappointment">Book Appointment</Link>
+                              <Link className="btn btn-lg text-light" to="/bookappointment">Book Appointment</Link>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-md-4">
-                        <div class="p-3 bg-white  d-flex justify-content-around align-items-center rounded">
+                        <div class="p-3 bg-info shadow  d-flex justify-content-around align-items-center rounded">
                             <div>
-                                <p class="btn btn-success btn-lg">Book Lab Test</p>
+                                <p class="btn btn-lg text-light">Book Lab Test</p>
                             </div>
             
                         </div>
                     </div>
 
                     <div class="col-md-4">
-                        <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
+                        <div class="p-3 bg-info shadow d-flex justify-content-around align-items-center rounded">
                             <div>
-                                <p class="btn btn-lg btn-danger">Buy Medicine</p>
+                                <p class="btn btn-lg text-light ">Buy Medicine</p>
                             </div>
                         </div>
                     </div>
@@ -115,7 +115,7 @@ function PatientDashboard()
 
             </div>
         </div>
-    </div>}
+    </div>
         </div>
     )
  

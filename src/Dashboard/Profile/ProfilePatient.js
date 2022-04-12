@@ -26,7 +26,7 @@ console.log(patient);
 
   return (
     <div>
-       { !sessionStorage.getItem("token") ? <Navigate to="/login/patient/" /> :
+       {/* { !sessionStorage.getItem("token") ? <Navigate to="/login/patient/" /> : */}
     
        <div>
            <h2 className="text-center mt-5">Patient Profile</h2>
@@ -52,14 +52,14 @@ console.log(patient);
                 <td>{patient.email}</td>
                 <td>{patient.mobno}</td>
                 <td>
-                <Link className="btn btn-info" to={`/dashboard/update-patient/${patient.username}`} >Update</Link> 
+                {/* <Link className="btn btn-info" to={`/dashboard/update-patient/${patient.username}`} >Update</Link>  */}
                 </td>
               </tr>
           }
         </tbody>
       </table>
     </div>
-  }
+ 
 </div>
   )
 }

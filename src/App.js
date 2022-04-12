@@ -44,7 +44,8 @@ function App()
            <Route exact path='/login/patient' element={<LoginPatient/>}></Route>
            <Route exact path='/login/patient/forgotpassword' element={<ForgotPassword/>}></Route>
           
-            <Route exact path="/dashboard/patient/:username" element={<PatientDashboard />}></Route> 
+            <Route path="/dashboard/patient/:username" element={<PatientDashboard/>}></Route>
+            {/* <Route exact path='/dashboard/patientdashboard' element={<PatientDashboard/>}></Route> */}
            
             <Route exact path="/dashboard/doctor/:username" element={<DoctorDashboard/>}></Route>
             <Route exact path="/dashboard/patient/profile/:username" element={<ProfilePatient/>}></Route>

@@ -26,10 +26,10 @@ const Prescription = () => {
 
 
   return (
-    <div> { !sessionStorage.getItem("token") ? <Navigate to="/login/patient/" /> : 
+    // <div> { !sessionStorage.getItem("token") ? <Navigate to="/login/patient/" /> : 
     <div>
         <div>
-        <table class="table mt-5">
+        <table class="table mt-4">
   <thead class="thead-dark">
     <tr>
       <th scope="col">Medicine 1</th>
@@ -57,8 +57,8 @@ const Prescription = () => {
   </tbody>
 </table>
         </div>
-    </div>}
-  </div>
+    </div>
+ 
   )
 }
 
